@@ -35,3 +35,22 @@ public:
         return cargo;
     }
 };
+
+
+class GestionEmpleados {
+private:
+    vector<Empleado> empleados;
+
+public:
+    void agregarEmpleado(const Empleado& empleado) {
+        empleados.push_back(empleado);
+    }
+
+    void mostrarEmpleados() const {
+        cout << "Lista de empleados:" << endl;
+        for (size_t i = 0; i < empleados.size(); ++i) {
+            const Empleado& empleado = empleados[i];
+            cout << "Nombre: " << empleado.getNombre() << ", Edad: " << empleado.getEdad() << ", Cargo: " << empleado.getCargo() << endl;
+        }
+    }
+};
