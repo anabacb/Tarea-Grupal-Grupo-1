@@ -54,3 +54,25 @@ public:
         }
     }
 };
+
+int main() {
+    GestionEmpleados gestion;
+
+    int cantidadEmpleados;
+    cout << "Ingrese la cantidad de empleados que desea agregar: ";
+    cin >> cantidadEmpleados;
+    cin.ignore(); // Limpiar el buffer de entrada
+
+    for (int i = 0; i < cantidadEmpleados; ++i) {
+        cout << "\nEmpleado #" << i + 1 << ":" << endl;
+        Empleado emp;
+        emp.ingresarDatos();
+        gestion.agregarEmpleado(emp);
+    }
+
+    // Mostrar la lista de empleados
+    gestion.mostrarEmpleados();
+
+    return 0;
+}
+
